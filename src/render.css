@@ -1,0 +1,35 @@
+
+
+#chrome_json_render {
+    font-family: monospace;
+    font-size: 14px;
+}
+#chrome_json_render * {
+    margin: 0;
+    padding: 0;
+}
+#chrome_json_render p {
+    font-size: 18px;
+    color: green;
+}
+#chrome_json_render li {
+    list-style-type: none;
+    margin-left: 20px;
+}
+#chrome_json_render li span {
+    line-height: 20px;
+}
+#chrome_json_render .key {
+    color: #55746a;
+}
+#chrome_json_render .string {
+    color: #4caf50;
+}
+#chrome_json_render .number {
+    color: blue;
+}
+#chrome_json_render .boolean {
+    color: firebrick;
+}
+
+

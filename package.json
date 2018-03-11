@@ -1,0 +1,11 @@
+{
+  "name": "json-render",
+  "version": "1.0.0",
+  "description": "View JSON in the Chrome browser",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js"
+  },
+  "author": "wyhaya <wyhaya@gmail.com>",
+  "license": "MIT"
+}
