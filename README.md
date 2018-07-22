@@ -4,9 +4,9 @@
 
 > `JSON-Render` is a chrome plugin , When you preview json can show you the formatted view
 
-### Effect
+### Preview
 
-![After formatting](https://user-images.githubusercontent.com/23690145/36879437-c267bdd0-1dfe-11e8-9d26-406602c81bdd.png)
+![After formatting](https://user-images.githubusercontent.com/23690145/43044151-ad174b18-8dd3-11e8-9d84-8ef5c18e9500.png)
 
 ### Install
 

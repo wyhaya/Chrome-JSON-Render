@@ -1,7 +1,7 @@
 
 
 #chrome_json_render {
-    font-family: monospace;
+    font-family: Menlo, Monaco, 'Courier New', monospace;
     font-size: 14px;
 }
 #chrome_json_render * {
@@ -17,7 +17,7 @@
     margin-left: 20px;
 }
 #chrome_json_render li span {
-    line-height: 20px;
+    line-height: 22px;
 }
 #chrome_json_render .key {
     color: #55746a;

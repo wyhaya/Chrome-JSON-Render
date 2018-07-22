@@ -2,25 +2,16 @@
 
 (() => {
 
-    'use strict'
-
     class Render {
 
-        constructor(obj) {
-            this.render(obj.el, obj.data)
+        constructor(option) {
+            this.render(option.el, option.data)
         }
 
-        // get
-        getJson(url, option = {}) {
-            return fetch(url, option).then((res) => {
-                return res.json()
-            })
-        }
-
-        // renderHtml
         render(tagView, data) {
 
-            var ul = this.createTag('ul', '')
+            let ul = this.createTag('ul', '')
+
             for (let x in data) {
                 if (typeof data[x] != "object") {
 
@@ -38,6 +29,7 @@
 
                 }
             }
+            
             tagView.appendChild(ul)
             return tagView
         }
@@ -84,39 +76,37 @@
     }
 
 
-    document.onreadystatechange = function () {
+    document.onreadystatechange = () => {
 
-        document.readyState === 'complete' && renderHtml()
+        const pre = document.querySelector('pre')
 
-    }
-
-    let renderHtml = function () {
-
-        // JSON code
-        const jsonStr = document.querySelector('pre') ? document.querySelector('pre').innerHTML : ''
-
+        if (document.readyState !== 'complete' || !pre) {
+            return
+        }
+        
+        if (pre.parentNode !== document.body || pre.innerHTML === '') {
+            return
+        }
 
         try {
-            JSON.parse(jsonStr)
+            document.querySelector('body').innerHTML = `
+                <div id='chrome_json_render'> 
+                    <p>{</p> 
+                    <div></div> 
+                    <p>}</p>
+                </div>
+            `
+            new Render({
+                el: document.querySelector('#chrome_json_render div'),
+                data: JSON.parse(pre.innerHTML)
+            })
+
         } catch (eve) {
             return false
         }
 
-        // html
-        document.querySelector('body').innerHTML = `
-            <div id='chrome_json_render'> 
-                <p>{</p> 
-                    <div></div> 
-                <p>}</p>
-            </div>
-        `
-
-        new Render({
-            el: document.querySelector('#chrome_json_render div'),
-            data: JSON.parse(jsonStr)
-        })
-
     }
 
 })()
+
 
