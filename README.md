@@ -6,7 +6,7 @@
 
 ### Preview
 
-![After formatting](https://user-images.githubusercontent.com/23690145/43044151-ad174b18-8dd3-11e8-9d84-8ef5c18e9500.png)
+![After formatting](https://user-images.githubusercontent.com/23690145/43120403-a4d59048-8f4c-11e8-858b-888e6f69f842.png)
 
 ### Install
 

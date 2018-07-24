@@ -88,7 +88,16 @@
             return
         }
 
+        let JSONString = null
+
         try {
+            JSONString = JSON.parse(pre.innerHTML)
+        } catch (eve) {
+            return false
+        }
+
+        if(JSONString !== null) {
+
             document.querySelector('body').innerHTML = `
                 <div id='chrome_json_render'> 
                     <p>{</p> 
@@ -96,13 +105,12 @@
                     <p>}</p>
                 </div>
             `
+
             new Render({
                 el: document.querySelector('#chrome_json_render div'),
                 data: JSON.parse(pre.innerHTML)
             })
 
-        } catch (eve) {
-            return false
         }
 
     }
