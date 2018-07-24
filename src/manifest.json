@@ -1,7 +1,7 @@
 {
   "name": "JSON-Render",
   "description": "View JSON in the Chrome browser",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "manifest_version": 2,
   "icons": {
     "16": "ico/16.png",
