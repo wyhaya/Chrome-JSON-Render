@@ -75,6 +75,15 @@
 
     }
 
+    const isJSon = (str) => {
+        try {
+            if (typeof JSON.parse(str) == 'object') {
+                return true
+            }
+        } catch(e) {
+        }
+        return false
+    }
 
     document.onreadystatechange = () => {
 
@@ -88,29 +97,18 @@
             return
         }
 
-        let JSONString = null
-
-        try {
-            JSONString = JSON.parse(pre.innerHTML)
-        } catch (eve) {
-            return false
-        }
-
-        if(JSONString !== null) {
-
+        if(isJSon(pre.innerHTML)) {
             document.querySelector('body').innerHTML = `
-                <div id='chrome_json_render'> 
+                <div id='json'> 
                     <p>{</p> 
                     <div></div> 
                     <p>}</p>
                 </div>
             `
-
             new Render({
-                el: document.querySelector('#chrome_json_render div'),
+                el: document.querySelector('#json div'),
                 data: JSON.parse(pre.innerHTML)
             })
-
         }
 
     }
